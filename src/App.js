@@ -95,9 +95,6 @@ class App extends Component {
         })
     }
 }
-onChangeQwery = query => {
-  this.setState({ query: query, page: 1, pictures: [], error: null });
-};
 
 
 

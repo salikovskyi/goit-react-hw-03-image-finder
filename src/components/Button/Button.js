@@ -10,3 +10,8 @@ export default function Button({onClick}) {
     </div>
     )
 }
+
+
+Button.propTypes = {
+    onClick: propTypes.func,
+  };

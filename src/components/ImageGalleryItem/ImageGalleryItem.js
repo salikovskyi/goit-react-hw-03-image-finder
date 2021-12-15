@@ -1,5 +1,5 @@
 import css from './ImageGalleryItem.module.css'
-
+import PropTypes from 'prop-types';
 
 export default function ImageGalleryItem({picture, onClick}) {
     return (
@@ -8,3 +8,9 @@ export default function ImageGalleryItem({picture, onClick}) {
 </li>
     )
 }
+ImageGalleryItem.propTypes = {
+  webformatURL: PropTypes.string,
+  largeImageURL: PropTypes.string,
+  tags: PropTypes.string,
+  bigImage: PropTypes.func,
+};
