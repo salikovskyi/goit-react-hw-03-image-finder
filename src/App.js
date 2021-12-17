@@ -115,7 +115,7 @@ loadMore = () => {
     return (
       <div className="App">
         <Searchbar onSubmit={this.searchQuery}  />
-        {error && <h1 className='title'>ШАТАП БРО ТАКОГО НЕТУ</h1>}
+        {error && <h1 className='title'>ШАТАП БРО</h1>}
         <ImageGallery pictures={pictures} onClick={this.bigImage}/>
         {loading && <Loader />}
         {!finish && pictures.length > 11 && !loading && ( <Button onClick={this.loadMore} />)}
