@@ -69,7 +69,7 @@ class App extends Component {
   // }
 
   searchQuery = ({query})=> {
-    this.setState({query, page: 1, pictures: [], error: null})
+    this.setState({query, page: 1, pictures: [], error: null, finish: false, loading: false })
   }
 
   async fetchProducts() {
@@ -86,12 +86,16 @@ class App extends Component {
               if (data.hits.length < 11) {
                 newState.finish = true
               }
+              if(data.hits.length === 0) {
+                newState.error = true;
+              }
           return newState;
         })  
     } catch (error) {
         this.setState({
             loading: false,
-            error
+            error: null
+
         })
     }
 }
@@ -111,7 +115,7 @@ loadMore = () => {
     return (
       <div className="App">
         <Searchbar onSubmit={this.searchQuery}  />
-        {error && <p>ШАТАп</p>}
+        {error && <h1 className='title'>ШАТАП БРО ТАКОГО НЕТУ</h1>}
         <ImageGallery pictures={pictures} onClick={this.bigImage}/>
         {loading && <Loader />}
         {!finish && pictures.length > 11 && !loading && ( <Button onClick={this.loadMore} />)}
