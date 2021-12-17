@@ -27,6 +27,7 @@
     background-color: #fff;
     border-radius: 3px;
     overflow: hidden;
+    border-radius: 40px;
   }
   
   .button {
@@ -69,6 +70,7 @@
     outline: none;
     padding-left: 4px;
     padding-right: 4px;
+
   }
   
   .input::placeholder {
